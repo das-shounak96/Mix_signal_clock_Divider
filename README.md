@@ -31,3 +31,49 @@ Mixed Signal Circuit Design and Simulation Marathon:
 [ngspice](http://ngspice.sourceforge.net/docs.html)
 [Makerchip](https://www.makerchip.com/)
 [Verilator]( https://www.veripool.org/verilator/))
+
+
+#Netlist
+
+
+
+![Netlist](https://user-images.githubusercontent.com/112755361/194693785-1cd34aab-8685-43df-9710-385edc5805a8.png)
+
+#Steps to run generate NgVeri Model`
+
+Open eSim
+Run NgVeri-Makerchip
+Add top level verilog file in Makerchip Tab
+Click on NgVeri tab
+Add dependency files
+Click on Run Verilog to NgSpice Converter
+Debug if any errors
+Model created successfully
+
+#Steps to run this project
+
+
+Open a new terminal
+Clone this project using the following command:
+git clone https://github.com/das-shounak96/Mix_signal_clock_Divider
+
+Run ngspice:
+ngspice shounak_clk_div.cir.out
+To run the project in eSim:
+Run eSim
+Load the project
+Open eeSchema
+
+
+#Acknowlegdements
+
+
+[IIT Bombay](http://iitb.ac.in/)
+[Google.com](https://www.google.co.in/)
+[Skywater OPen Source PDK](https://skywater-pdk.readthedocs.io/en/main/)
+[Tim Edwards, SVP Analog & Platform, Efabless](https://efabless.com/)
+[Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com](https://www.vlsisystemdesign.com/)
+[Fossee](https://fossee.in/)
+[Spoken Tutorial](https://spoken-tutorial.org/)
+[MeitY_C2s](https://www.c2s.gov.in/)
+[Sumanto Kar, eSim Team, FOSSEE](https://www.linkedin.com/in/sumanto-kar-0424391a9/)
