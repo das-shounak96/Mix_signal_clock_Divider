@@ -1,0 +1,45 @@
+* d:\shounak\mix_signal_hacakthon\esim\final\final.cir
+
+.include avsd_opamp.sub
+.include "C:\FOSSEE\eSim\library\sky130_fd_pr\models\sky130_fd_pr__model__inductors.model.spice"
+.include "C:\FOSSEE\eSim\library\sky130_fd_pr\models\sky130_fd_pr__model__diode_pw2nd_11v0.model.spice"
+.include "C:\FOSSEE\eSim\library\sky130_fd_pr\models\sky130_fd_pr__model__r+c.model.spice"
+.lib "C:\FOSSEE\eSim\library\sky130_fd_pr\models\sky130.lib.spice" tt
+.include "C:\FOSSEE\eSim\library\sky130_fd_pr\models\sky130_fd_pr__model__linear.model.spice"
+.include "C:\FOSSEE\eSim\library\sky130_fd_pr\models\sky130_fd_pr__model__pnp.model.spice"
+.include "C:\FOSSEE\eSim\library\sky130_fd_pr\models\sky130_fd_pr__model__diode_pd2nw_11v0.model.spice"
+x1 net-_x1-pad1_ net-_x1-pad2_ vin gnd vone gnd avsd_opamp
+v3 gnd net-_x1-pad2_  dc 1
+v2 net-_x1-pad1_ gnd  dc 1
+xsc1 vone gnd sky130_fd_pr__cap_mim_m3_1 w=1u L=0.15u
+* u1  vin plot_v1
+* u2  vone plot_v1
+* s c m o d e
+v1  vin gnd sine(0 2 1 0 0)
+* u3  vone vadc adc_bridge_1
+* u4  vadc plot_v1
+* u5  vadc clk2 clk4 clk8 shounak_clk_div
+* u6  clk2 plot_v1
+* u7  clk4 plot_v1
+* u8  clk8 plot_v1
+a1 [vone ] [vadc ] u3
+a2 [vadc ] [clk2 ] [clk4 ] [clk8 ] u5
+* Schematic Name:                             adc_bridge_1, NgSpice Name: adc_bridge
+.model u3 adc_bridge(in_low=1.0 in_high=2.0 rise_delay=1.0e-9 fall_delay=1.0e-9 ) 
+* Schematic Name:                             shounak_clk_div, NgSpice Name: shounak_clk_div
+.model u5 shounak_clk_div(rise_delay=1.0e-9 fall_delay=1.0e-9 input_load=1.0e-12 instance_id=1 ) 
+.tran 0.1e-00 20e-00 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(vin)
+plot v(vone)
+plot v(vadc)
+plot v(clk2)
+plot v(clk4)
+plot v(clk8)
+.endc
+.end

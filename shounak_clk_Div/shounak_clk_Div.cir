@@ -1,0 +1,24 @@
+* D:\SHOUNAK\Mix_signal_hacakthon\eSim\final\final.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: 10/07/22 17:10:19
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+X1  Net-_X1-Pad1_ Net-_X1-Pad2_ vin GND vone GND avsd_opamp		
+v3  GND Net-_X1-Pad2_ DC		
+v2  Net-_X1-Pad1_ GND DC		
+SC1  vone GND sky130_fd_pr__cap_mim_m3_1		
+U1  vin plot_v1		
+U2  vone plot_v1		
+scmode1  SKY130mode		
+v1  vin GND sine		
+U3  vone vadc adc_bridge_1		
+U4  vadc plot_v1		
+U5  vadc clk2 clk4 clk8 shounak_clk_div		
+U6  clk2 plot_v1		
+U7  clk4 plot_v1		
+U8  clk8 plot_v1		
+
+.end
