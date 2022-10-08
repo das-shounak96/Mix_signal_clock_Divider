@@ -26,4 +26,8 @@ Mixed Signal Circuit Design and Simulation Marathon:
 ![image](https://user-images.githubusercontent.com/112755361/194693451-8360e0f5-0e44-4fc4-bfd1-8ebae46f59ae.png)
 
 
-
+[software use](
+[esim](https://esim.fossee.in/home)
+[ngspice](http://ngspice.sourceforge.net/docs.html)
+[Makerchip](https://www.makerchip.com/)
+[Verilator]( https://www.veripool.org/verilator/))
